@@ -1,0 +1,75 @@
+Assignment 1:
+CPSC 411
+Due: Midnight Friday Night, January 13, 2017
+
+Language Processing in Java
+
+
+Both CPSC311 and CPSC411 focus on writing programs that process
+languages.  In this assignment, you will transfer your knowledge about
+writing language processors in Racket's PLAI language to corresponding
+programs in Java's pure object-oriented style.
+
+One of the key insights in this work is that many functional programs
+written using algebraic datatypes (i.e., define-type)
+and recursive functions that decompose them (using type-case)
+naturally translate to programs that use class hierarchies and
+recursive method calls.
+
+In class we translated the Racket language processor for a language of
+Arithmetic Expressions (AE).  Your mission is to do the same for an
+extension of that language to Arithmetic and Boolean Expressions
+(ABE).
+
+Particulars:
+- All of your Java code should be placed in the package
+  ca.ubc.cs411.assignment1.
+- To directly reflect the correspondence between the Racket and Java
+  code, promote uniformity across submissions, and facilitate unit
+  testing, the names of Java code elements should be adapted directly
+  from the Racket Code.  For example, the 'type-of' function in Racket
+  becomes the 'typeOf' method in Java.  Transformations follow the
+  below conventions:
+  + Class names must be written in UpperCamelCase (e.g. Add);
+  + Method names must be written in lowerCamelCase (e.g. typeOf);
+  + Enumeration type names must be written in UpperCamelCase (e.g. Type);
+  + Enumeration elements must be written in UPPERCASE (e.g. INT).
+
+
+Problem 1:
+
+The Racket PLAI file abe.rkt implements the ABE datatype and an
+interpreter for that language.  Translate that implementation into
+Java.  Be sure to use class names that correspond verbatim, as we did
+for the AE language.
+
+The ABE language presents two significant differences from AE.  First,
+the result of interpretation is its own datatype, Value, rather than
+native Java ints.
+
+Second, the interpreter may signal errors if the a value is used in
+the wrong context, e.g. if you try to add to a Boolean.  To translate
+Racket's (error ...) form, you should throw a Java Error() exception
+with an error string.
+
+
+
+Problem 2:
+
+The PLAI ABE implementation provides a type checker for the language,
+which only accepts some ABE programs.  However, any program that
+passes the type checker is guaranteed to run without raising an error
+when it is interpreted.  If we restricted our language to only
+programs that passed the type checker, then we wouldn't even need to
+check for errors in the interpreter, because they would never happen.
+
+Since the Type datatype is just an enumeration (in the sense of
+CPSC110), translate it to a Java enum:
+
+public enum Type {INT, BOOL}
+
+
+Implement typeOf for the ABE language. 
+
+
+
