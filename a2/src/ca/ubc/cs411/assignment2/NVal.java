@@ -7,6 +7,11 @@ public class NVal extends Value {
   }
 
   @Override
+  public int ToNum() {
+    return n;
+  }
+
+  @Override
   public String toString() {
       return "NVal(" + n + ')';
   }
