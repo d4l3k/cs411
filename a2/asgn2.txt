@@ -1,0 +1,35 @@
+Assignment 2:
+CPSC 411
+Due: Midnight Friday Night, January 20, 2017
+
+Language Processing in Java, Now with Visitors!
+
+In our last assignment, we focused on transforming function-oriented
+language processors in Racket into object-oriented language processors
+in Java.  In this assignment, you will produce a function-oriented
+language processor in Java, using the Visitor pattern, which will be a
+recurring theme in this course.
+
+Your mission is to transform the ABE interpreter and type checker to Java,
+this time using the Visitor pattern.
+
+
+Particulars:
+- All of your Java code should be placed in the package
+  ca.ubc.cs411.assignment2.
+- When translating a Racket function to a Visitor, you will use the
+  Java Class convention and affix Visitor to it, e.g., the 'type-of'
+  function becomes the 'TypeOfVisitor'.
+- Other conventions from last assignment carry over:
+  + Class names must be written in UpperCamelCase (e.g. Add);
+  + Method names must be written in lowerCamelCase (e.g. typeOf);
+  + Enumeration type names must be written in UpperCamelCase (e.g. Type);
+  + Enumeration elements must be written in UPPERCASE (e.g. INT).
+- You should still use the object-oriented presentation of Values.
+  Only the functions on ABE abstract syntax are to be transformed to
+  Visitors.
+- You should still use the enumeration-based representation of types.
+- Runtime errors are still translated by throwing Error().
+
+
+
