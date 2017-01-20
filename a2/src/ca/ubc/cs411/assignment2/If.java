@@ -15,4 +15,9 @@ public class If extends ABE {
   public <X> X accept(Visitor<X> v) {
     return v.visit(this);
   }
+
+  @Override
+  public String toString() {
+    return "If(" + pred + ", " + conseq + "," + altern + ')';
+  }
 }

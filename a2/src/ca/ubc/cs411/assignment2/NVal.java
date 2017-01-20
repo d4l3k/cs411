@@ -5,4 +5,9 @@ public class NVal extends Value {
   public NVal(int n) {
     this.n = n;
   }
+
+  @Override
+  public String toString() {
+      return "NVal(" + n + ')';
+  }
 }

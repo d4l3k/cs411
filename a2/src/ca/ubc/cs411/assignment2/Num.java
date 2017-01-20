@@ -10,4 +10,9 @@ public class Num extends ABE {
   public <X> X accept(Visitor<X> v) {
     return v.visit(this);
   }
+
+  @Override
+  public String toString() {
+      return "Num(" + n + ')';
+  }
 }

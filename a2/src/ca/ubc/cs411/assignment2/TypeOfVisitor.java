@@ -13,7 +13,7 @@ public class TypeOfVisitor implements Visitor<Type> {
     if (t1 == Type.INT && t2 == Type.INT) {
       return Type.INT;
     } else {
-      throw new Error("Add arguments must be INT");
+      throw new Error("type-of: argument type mismatch for + " + t1 + " " + t2);
     }
   }
 
@@ -24,7 +24,7 @@ public class TypeOfVisitor implements Visitor<Type> {
     if (t1 == Type.INT && t2 == Type.INT) {
       return Type.INT;
     } else {
-      throw new Error("Add arguments must be INT");
+      throw new Error("type-of: argument type mismatch for - " + t1 + " " + t2);
     }
   }
 
@@ -48,10 +48,10 @@ public class TypeOfVisitor implements Visitor<Type> {
       if (t2 == t3) {
         return t2;
       } else {
-        throw new Error("type mismatch for if branches");
+        throw new Error("type-of: type mismatch for if branches " + t2 + " " + t3);
       }
     } else {
-      throw new Error("non-Bool predicate type");
+      throw new Error("type-of: non-Bool predicate type:" + t1);
     }
   }
 
